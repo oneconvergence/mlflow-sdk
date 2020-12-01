@@ -31,7 +31,7 @@ from mlflow.projects.utils import (
 )
 from mlflow.utils.conda import get_conda_command, get_or_create_conda_env
 from mlflow.store.artifact.artifact_repository_registry import get_artifact_repository
-from mlflow.store.artifact.azure_blob_artifact_repo import AzureBlobArtifactRepository
+#from mlflow.store.artifact.azure_blob_artifact_repo import AzureBlobArtifactRepository
 from mlflow.store.artifact.gcs_artifact_repo import GCSArtifactRepository
 from mlflow.store.artifact.hdfs_artifact_repo import HdfsArtifactRepository
 from mlflow.store.artifact.local_artifact_repo import LocalArtifactRepository
@@ -328,7 +328,7 @@ def _get_hdfs_artifact_cmd_and_envs(artifact_repo):
 _artifact_storages = {
     LocalArtifactRepository: _get_local_artifact_cmd_and_envs,
     S3ArtifactRepository: _get_s3_artifact_cmd_and_envs,
-    AzureBlobArtifactRepository: _get_azure_blob_artifact_cmd_and_envs,
+    #AzureBlobArtifactRepository: _get_azure_blob_artifact_cmd_and_envs,
     HdfsArtifactRepository: _get_hdfs_artifact_cmd_and_envs,
     GCSArtifactRepository: _get_gcs_artifact_cmd_and_envs,
 }

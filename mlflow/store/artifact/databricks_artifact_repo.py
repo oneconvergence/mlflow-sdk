@@ -5,8 +5,8 @@ import posixpath
 import requests
 import uuid
 
-from azure.core.exceptions import ClientAuthenticationError
-from azure.storage.blob import BlobClient
+#from azure.core.exceptions import ClientAuthenticationError
+#from azure.storage.blob import BlobClient
 
 import mlflow.tracking
 from mlflow.entities import FileInfo
@@ -206,9 +206,9 @@ class DatabricksArtifactRepository(ArtifactRepository):
             raise MlflowException(err)
 
     def _upload_to_cloud(self, cloud_credentials, local_file, artifact_path):
-        if cloud_credentials.credentials.type == ArtifactCredentialType.AZURE_SAS_URI:
-            self._azure_upload_file(cloud_credentials.credentials, local_file, artifact_path)
-        elif cloud_credentials.credentials.type == ArtifactCredentialType.AWS_PRESIGNED_URL:
+        #if cloud_credentials.credentials.type == ArtifactCredentialType.AZURE_SAS_URI:
+        #    self._azure_upload_file(cloud_credentials.credentials, local_file, artifact_path)
+        if cloud_credentials.credentials.type == ArtifactCredentialType.AWS_PRESIGNED_URL:
             self._aws_upload_file(cloud_credentials.credentials, local_file)
         else:
             raise MlflowException(

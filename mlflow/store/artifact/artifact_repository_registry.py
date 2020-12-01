@@ -2,7 +2,7 @@ import entrypoints
 import warnings
 
 from mlflow.exceptions import MlflowException
-from mlflow.store.artifact.azure_blob_artifact_repo import AzureBlobArtifactRepository
+#from mlflow.store.artifact.azure_blob_artifact_repo import AzureBlobArtifactRepository
 from mlflow.store.artifact.dbfs_artifact_repo import dbfs_artifact_repo_factory
 from mlflow.store.artifact.ftp_artifact_repo import FTPArtifactRepository
 from mlflow.store.artifact.gcs_artifact_repo import GCSArtifactRepository
@@ -77,7 +77,7 @@ _artifact_repository_registry.register("", LocalArtifactRepository)
 _artifact_repository_registry.register("file", LocalArtifactRepository)
 _artifact_repository_registry.register("s3", S3ArtifactRepository)
 _artifact_repository_registry.register("gs", GCSArtifactRepository)
-_artifact_repository_registry.register("wasbs", AzureBlobArtifactRepository)
+#_artifact_repository_registry.register("wasbs", AzureBlobArtifactRepository)
 _artifact_repository_registry.register("ftp", FTPArtifactRepository)
 _artifact_repository_registry.register("sftp", SFTPArtifactRepository)
 _artifact_repository_registry.register("dbfs", dbfs_artifact_repo_factory)
